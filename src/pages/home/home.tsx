@@ -16,12 +16,11 @@ const VisuallyHiddenInput = styled('input')({
 });
 
 function Home() {
-  const [opacity, setOpacity] = useState<number>(50);
+  const [opacity, setOpacity] = useState<number>(75);
   const [projectUrl, setProjectUrl] = useState<string>('');
   const [width, setWidth] = useState<string | number>('');
   const [height, setHeight] = useState<string | number>('');
   const [imageUrl, setImageUrl] = useState<string>('');
-  console.log(projectUrl);
 
   function ForSelectImage(e: any) {
     const files = e.target.files;
