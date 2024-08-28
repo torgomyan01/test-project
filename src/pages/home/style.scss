@@ -8,6 +8,7 @@
   backdrop-filter: blur(10px);
   box-shadow: 0 0 13px #00000061;
   position: fixed;
+  z-index: 1000000000;
 }
 
 .visual-box{
