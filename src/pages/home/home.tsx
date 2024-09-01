@@ -40,35 +40,32 @@ function Home() {
 
   return (
     <>
-      {/*<Draggable>*/}
-      <div className="all-params">
-        <p className="fs-14 title">Opacity Real Site</p>
-        <Slider
-          size="small"
-          value={opacity}
-          min={0}
-          max={100}
-          onChange={(e, value) => (typeof value === 'number' ? setOpacity(value) : setOpacity(0))}
-          aria-label="Small"
-          valueLabelDisplay="auto"
-        />
-        <TextField
-          fullWidth
-          value={projectUrl}
-          onChange={(e) => setProjectUrl(e.target.value)}
-          label="Url Project"
-          variant="outlined"
-          className="mb-3"
-        />
-        <Button component="label" role={undefined} variant="contained" tabIndex={-1}>
-          Upload Design Image
-          <VisuallyHiddenInput type="file" accept=".png,.jpg,.jpeg" onChange={ForSelectImage} />
-        </Button>
-        <Button variant="contained" fullWidth className="mt-5">
-          Start
-        </Button>
-      </div>
-      {/*</Draggable>*/}
+      <Draggable handle=".handle">
+        <div className="all-params">
+          <p className="fs-14 title handle">Opacity Real Site </p>
+          <Slider
+            size="small"
+            value={opacity}
+            min={0}
+            max={100}
+            onChange={(e, value) => (typeof value === 'number' ? setOpacity(value) : setOpacity(0))}
+            aria-label="Small"
+            valueLabelDisplay="auto"
+          />
+          <TextField
+            fullWidth
+            value={projectUrl}
+            onChange={(e) => setProjectUrl(e.target.value)}
+            label="Url Project"
+            variant="outlined"
+            className="mb-3"
+          />
+          <Button component="label" role={undefined} variant="contained" tabIndex={-1}>
+            Upload Design Image
+            <VisuallyHiddenInput type="file" accept=".png,.jpg,.jpeg" onChange={ForSelectImage} />
+          </Button>
+        </div>
+      </Draggable>
       <div className="visual-box">
         <img src={imageUrl} alt="" className="visual-box-img" />
         <iframe
